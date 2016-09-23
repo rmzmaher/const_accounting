@@ -1,0 +1,47 @@
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+            <%= form_for(@buy) do |f| %>
+              <% if @buy.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@buy.errors.count, "error") %> prohibited this buy from being saved:</h2>
+
+                  <ul>
+                  <% @buy.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="field">
+                <strong>المبلغ</strong><br/>
+                <%= f.text_field :paid %>
+              </div>
+              <div class="field">
+                <strong>السعر/للوحدة</strong><br/>
+                <%= f.text_field :price_per_unit %>
+              </div>
+              <div class="field">
+                <strong>الكمية</strong><br/>
+                <%= f.number_field :quantity %>
+              </div>
+              <div class="field">
+                <strong>تاريخ</strong><br/>
+                <%= f.date_select :date %>
+              </div>
+              <div class="field">
+                <strong>ملاحظات</strong><br/>
+                <%= f.text_area :note %>
+              </div>
+              <div class="field">
+                <strong>الصنف</strong><br/>
+                <%= collection_select(:buy, :good_id, @good, :id, :name, {:prompt => false}) %>
+              </div>
+              <div class="actions">
+                <%= f.submit %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>

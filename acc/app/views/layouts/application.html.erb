@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acc</title>
+  <script src="/jquery-1.12.1.min.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+         <!-- Custom CSS -->
+    <link href="/css/business-casual.css" rel="stylesheet">
+</head>
+<body style="text-align:right">
+  <div class="brand">Alex Modern Building</div>
+    <div class="address-bar">29 yakout el hamawy street ,el seuif,Alexandria,Egypt</div>
+      <!-- Navigation -->
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
+                <a class="navbar-brand" >Alex Modern Building</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <%= link_to "الصفحة الرئيسية", :controller => "main", :action => "index" %> 
+                    </li>
+                    <li>
+                        <%= link_to "يوميه", "/main/show" %> 
+                    </li>
+                    <li>
+                        <a href="blog.html">الجرد اليومى</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">أقساط الشهر</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<%= yield %>
+</body>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+	<!-- jQuery -->
+    <script src="/js/bootstrap.js"></script>
+
+</html>

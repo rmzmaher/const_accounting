@@ -1,0 +1,39 @@
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+                    <%= form_for(@contractor) do |f| %>
+                      <% if @contractor.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@contractor.errors.count, "error") %> prohibited this contractor from being saved:</h2>
+
+                          <ul>
+                          <% @contractor.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+
+                      <div class="field">
+                        <strong>اسم المقاول</strong><br>
+                        <%= f.text_field :name %>
+                      </div>
+                      <div class="field">
+                        <strong>رقم التليفون</strong><br>
+                        <%= f.text_field :phone %>
+                      </div>
+                      <div class="field">
+                        <strong>المقاولة</strong><br>
+                        <%= f.text_field :type %>
+                      </div>
+                      <div class="field">
+                        <strong>ملاحظات</strong><br>
+                        <%= f.text_area :note %>
+                      </div>
+                      <div class="actions">
+                        <%= f.submit %>
+                      </div>
+                    <% end %>
+        </div>
+    </div>
+</div>

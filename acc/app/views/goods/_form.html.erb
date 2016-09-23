@@ -1,0 +1,35 @@
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+                    <%= form_for(@good) do |f| %>
+                      <% if @good.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(@good.errors.count, "error") %> prohibited this good from being saved:</h2>
+
+                          <ul>
+                          <% @good.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                          <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+
+                      <div class="field">
+                        <strong>الصنف</strong><br>
+                        <%= f.text_field :name %>
+                      </div>
+                      <div class="field">
+                        <strong>الوحدة</strong><br>
+                        <%= f.text_field :unit %>
+                      </div>
+                      <div class="field">
+                        <strong>ملاحظات</strong><br>
+                        <%= f.text_area :note %>
+                      </div>
+                      <div class="actions">
+                        <%= f.submit %>
+                      </div>
+                    <% end %>
+        </div>
+    </div>
+</div>

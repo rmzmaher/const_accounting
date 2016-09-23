@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cash:</strong>
+  <%= @safe.cash %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @safe.date %>
+</p>
+
+<p>
+  <strong>Sheet:</strong>
+  <%= @safe.sheet %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @safe.note %>
+</p>
+
+<%= link_to 'Edit', edit_safe_path(@safe) %> |
+<%= link_to 'Back', saves_path %>

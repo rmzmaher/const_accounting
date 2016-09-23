@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paid:</strong>
+  <%= @buy.paid %>
+</p>
+
+<p>
+  <strong>Price per unit:</strong>
+  <%= @buy.price_per_unit %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @buy.quantity %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @buy.date %>
+</p>
+
+<p>
+  <strong>Note:</strong>
+  <%= @buy.note %>
+</p>
+
+<p>
+  <strong>Good:</strong>
+  <%= @buy.good %>
+</p>
+
+<%= link_to 'Edit', edit_buy_path(@buy) %> |
+<%= link_to 'Back', buys_path %>

@@ -1,0 +1,70 @@
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+                      <h1  style="text-align:center">  يومية عن<%= tn(Date.today.day.to_int) %>-<%= tn(Date.today.month.to_int) %>-<%= tn(Date.today.year.to_int) %>    </h1>
+                      <table border=2px style="text-align:center" class="table table-bordered table-striped active info" cellspacing="0" width="100%" >
+                      <% if @buys.count > 0%>
+                        <thead>
+                          <tr>
+                            <th colspan="2">تعديلات</th>
+                            <th>ملاحظات</th>
+                            <th colspan="3">قيمة</th>
+                            <th>المبلغ</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% @buys.each do |buy| %>
+                            <tr>
+                              <td><%= link_to 'تعديل', edit_buy_path(buy) %></td>
+                              <td><%= link_to 'حذف', buy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                              <td><%= buy.note %></td>
+                              <td><%= buy.good.name %></td>
+                              <td><%= buy.good.unit %></td>
+                              <td><%= if buy.quantity
+                              			tn(buy.quantity.to_int)
+                              	 	end %></td>
+                              <td><%= tn(buy.paid.to_int) %></td>
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      <% end %>
+                      <% if @pays.count > 0 %>
+                        <thead>
+                        <tr>
+                            <th colspan="2">تعديلات</th>
+                            <th>ملاحظات</th>
+                            <th colspan="3">المقاول</th>
+                            <th>المبلغ</th>
+
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <% @pays.each do |pay| %>
+                            <tr>
+                              <td><%= link_to 'تعديل', edit_pay_path(pay) %></td>
+                              <td><%= link_to 'حذف', pay, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                              <td><%= pay.note %></td>
+                              <td colspan="3"><%= pay.contractor.name %><%= pay.contractor.cause %></td>
+                              <td><%= tn(pay.amount.to_int) %></td>
+
+                            </tr>
+                          <% end %>
+                        </tbody>
+                      <% end %>
+                         <tbody>
+                              <tr>
+                                <td colspan="6" > الإجمالى </td>
+                                <td colspan="2"> <%= tn(@total.to_int) %></td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      <br>
+                      <hr>
+                      <%= link_to "مشتريات", "/buys/new" %>
+                      <%= link_to "سداد مقولين فرعيين", "/pays/new" %> 
+                  </div>
+              </div>
+          </div>

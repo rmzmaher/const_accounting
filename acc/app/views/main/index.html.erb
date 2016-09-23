@@ -1,0 +1,41 @@
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+                	<hr><h1>حسابات برج</h1><hr>
+                    <strong><%= link_to "أدخل بضاعة", "goods/new" %><br/>
+					<%= link_to "أدخل مقاول", 'contractors/new' %> <br/>
+					<%= link_to "يوميه", 'main/show' %> <br/>
+					<%= link_to "عرض يوميات سابقة", 'main/report' %> <br/>
+					<%= link_to "عرض حساب صنف", '/goods' %> <br/>
+					<%= link_to "عرض حسابات مقاول فرعى", '/contractors' %> <br/></strong>
+                </div>
+            </div>
+        </div>
+
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+                	<hr><h1>حسابات الخزنة</h1><hr>
+                    <strong><%= link_to "وارد الخزنة", "saves/new" %><br/>
+                        <%= link_to 'عرض كشف الوارد', saves_path %><br/>
+					<%= link_to " الجرد اليومى", 'contractors/new' %> <br/>
+                </div>
+            </div>
+        </div>
+
+<div class="row">
+            <div class="box">
+                <div class="col-lg-12 intro-text text-center">
+                	<hr><h1>المبيعات</h1><hr>
+                    <strong><%= link_to "أضف بيانات مشترى", "goods/new" %><br/>
+					<%= link_to "أضافة أقساط", 'contractors/new' %> <br/>
+					<%= link_to "عرض أقساط بالشهر", 'main/report' %> <br/>
+					<%= link_to "عرض أقساط مشترى", '/goods' %> <br/>
+                </div>
+            </div>
+        </div>
+
+
+<%#= tn(@total_price[0].to_int) %>
+<%#= tn(14) %>
+<%#= @total_paid %>

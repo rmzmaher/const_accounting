@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paid: 1.5
+  price_per_unit: 1.5
+  quantity: 1
+  date: 2016-08-18
+  note: MyText
+  good_id: 
+
+two:
+  paid: 1.5
+  price_per_unit: 1.5
+  quantity: 1
+  date: 2016-08-18
+  note: MyText
+  good_id: 

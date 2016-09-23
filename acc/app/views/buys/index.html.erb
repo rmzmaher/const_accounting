@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Buys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Paid</th>
+      <th>Price per unit</th>
+      <th>Quantity</th>
+      <th>Date</th>
+      <th>Note</th>
+      <th>Good</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buys.each do |buy| %>
+      <tr>
+        <td><%= buy.paid %></td>
+        <td><%= buy.price_per_unit %></td>
+        <td><%= buy.quantity %></td>
+        <td><%= buy.date %></td>
+        <td><%= buy.note %></td>
+        <td><%= buy.good %></td>
+        <td><%= link_to 'Show', buy %></td>
+        <td><%= link_to 'Edit', edit_buy_path(buy) %></td>
+        <td><%= link_to 'Destroy', buy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buy', new_buy_path %>
